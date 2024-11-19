@@ -4,6 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
+import { useParams } from 'next/navigation';
 
 interface MovieDetails {
   id: number;
@@ -23,15 +24,11 @@ interface CastResponse {
   cast: CastMember[];
 }
 
-interface MoviePageProps {
-  params: {
-    id: string;
-  };
-}
 
 
-export default function MoviePage({ params }: MoviePageProps) {
-      const { id } = params; 
+export default function MoviePage() {
+  const params = useParams();
+  const { id } = params; 
   // Movie state
   const [movie, setMovie] = useState<MovieDetails | null>(null);
   const [cast, setCast] = useState<CastMember[]>([]);
@@ -153,7 +150,6 @@ export default function MoviePage({ params }: MoviePageProps) {
           </div>
         </div>
         : 
-
         <div className="max-w-4xl mx-auto flex flex-col gap-8 pt-[4rem]">
           <div className="animate-pulse">
             <div className="w-[35%] h-96 bg-gray-600 rounded-md"></div>
