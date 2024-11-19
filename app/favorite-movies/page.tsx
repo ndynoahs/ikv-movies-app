@@ -47,7 +47,7 @@ export default function FavoriteMovies() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {favoriteMovies.map((movie) => (
                 <Link key={movie.id} href={`/movie/${movie.id}`}>
-                  <div key={movie.id} className="flex flex-col items-center py-6">
+                  <div key={movie.id} className="flex flex-col items-center space-y-4 py-6">
                     <Image
                       src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                       alt={movie.title}

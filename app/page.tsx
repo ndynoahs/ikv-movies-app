@@ -9,17 +9,15 @@ export default function Home() {
   const { movies, loading, hasMore, setSearch, search } = useInfiniteScroll();
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6  space-y-6">
-      <div className="flex justify-between py-4 md:py-0">
-        <h1 className="text-xl md:text-3xl font-bold mb-4">Popular Movies</h1>
-        <div>
+    <div className="min-h-screen bg-gray-900 text-white p-6 space-y-6">
+      <div className="flex items-center justify-between md:px-2 py-4 md:py-0">
+        <h1 className="text-lg md:text-3xl font-bold ">Popular Movies</h1>
           <Link href="/favorite-movies">
-              <div className="flex px-4 gap-4">
-                <p>View Favorites</p>
+              <div className="flex gap-2">
+                <p className=" ">View Favorites</p>
                 <MdFavoriteBorder className="h-6 w-6" />
               </div>
           </Link>
-        </div>
       </div>
 
       <input
@@ -31,18 +29,18 @@ export default function Home() {
       />
 
       {loading ? 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {Array.from({ length: 12 }).map((_, index) => (
             <SkeletonCard key={index} />
           ))}
         </div>
         :
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div>
-    }
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {movies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </div>
+      }
 
       {!hasMore && (
         <div className="text-center py-4">

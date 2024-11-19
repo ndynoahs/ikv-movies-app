@@ -152,7 +152,7 @@ export default function MoviePage() {
         : 
         <div className="max-w-4xl mx-auto flex flex-col gap-8 pt-[4rem]">
           <div className="animate-pulse">
-            <div className="w-[35%] h-96 bg-gray-600 rounded-md"></div>
+            <div className="md:w-[35%] h-96 bg-gray-600 rounded-md"></div>
             <div className="mt-4 h-6 bg-gray-600 rounded-md w-full"></div>
             <div className="mt-4 h-6 bg-gray-600 rounded-md w-full"></div>
             <div className="mt-2 h-6 bg-gray-600 rounded-md w-1/2"></div>
