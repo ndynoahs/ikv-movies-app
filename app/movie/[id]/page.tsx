@@ -80,7 +80,7 @@ export default function MoviePage() {
       <Header isFavorite={isFavorite} handleFavoriteToggle={handleFavoriteToggle} />   
 
       {movie ?    
-        <div className="max-w-4xl mx-auto flex flex-col  gap-8  pt-[4rem]">
+        <div className="max-w-4xl mx-auto flex flex-col  gap-8 pt-[2rem] md:pt-[4rem]">
           {/* Poster Image */}
           <div className="flex flex-col">
               <Image

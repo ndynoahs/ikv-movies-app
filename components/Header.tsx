@@ -12,7 +12,7 @@ const Header: FC<HeaderProps> = ({ isFavorite, handleFavoriteToggle }) => {
   return (
     <header className="flex md:justify-between text-white py-4 md:px-6 items-center">
       <Link href="/">
-        <button className="flex px-4 py-2 rounded gap-4">
+        <button className="flex md:px-4 py-2 rounded gap-4">
           <HiOutlineReply className="h-6 w-6" />
           Go back
         </button>

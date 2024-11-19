@@ -9,16 +9,17 @@ export default function Home() {
   const { movies, loading, hasMore, setSearch, search } = useInfiniteScroll();
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 space-y-6">
-      <div className="flex  justify-between">
+    <div className="min-h-screen bg-gray-900 text-white p-6  space-y-6">
+      <div className="flex justify-between py-4 md:py-0">
         <h1 className="text-xl md:text-3xl font-bold mb-4">Popular Movies</h1>
-
-        <Link href="/favorite-movies">
-            <div className="flex px-4 py-2 gap-4">
-              <p>View Favorites</p>
-              <MdFavoriteBorder className="h-6 w-6" />
-            </div>
-        </Link>
+        <div>
+          <Link href="/favorite-movies">
+              <div className="flex px-4 gap-4">
+                <p>View Favorites</p>
+                <MdFavoriteBorder className="h-6 w-6" />
+              </div>
+          </Link>
+        </div>
       </div>
 
       <input
