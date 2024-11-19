@@ -43,14 +43,15 @@ A responsive, dynamic Movie Library Application built using **Next.js**, **TypeS
 Ensure you have the following installed:
 
 - Node.js (v14 or higher)
+- Recomended (v18.8.0)
 - npm or yarn
 
 ### **Installation**
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/movie-library-app.git
-   cd movie-library-app
+   git clone https://github.com/ndynoahs/ikv-movies-app.git
+   cd ikv-movies-app
    ```
    Here’s how you can structure the README.md file for your project:
    README.md

@@ -1,7 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -26,7 +25,7 @@ interface CastResponse {
 
 
 export default function MoviePage({ params }: { params: { id: string } }) {
-    const { id } = use(params);
+    const { id } = params; 
   // Movie state
   const [movie, setMovie] = useState<MovieDetails | null>(null);
   const [cast, setCast] = useState<CastMember[]>([]);
@@ -130,7 +129,7 @@ export default function MoviePage({ params }: { params: { id: string } }) {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {cast.map((actor) => (
                 <div key={actor.id} className="flex flex-col items-center">
-                  <img
+                  <Image
                     src={
                       actor.profile_path
                         ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
@@ -138,6 +137,8 @@ export default function MoviePage({ params }: { params: { id: string } }) {
                     }
                     alt={actor.name}
                     className="w-full h-36 object-cover rounded mb-2 sm:h-44 md:h-48 lg:h-56"
+                    width={900}
+                    height={600}
                   />
                   <p className="text-gray-400 text-center text-sm">{actor.name}</p>
                 </div>
