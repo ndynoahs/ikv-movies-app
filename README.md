@@ -1,36 +1,199 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movie Library Application
+
+A responsive, dynamic Movie Library Application built using **Next.js**, **TypeScript**, and **Tailwind CSS**. The application interacts with the TMDb API to display and manage a list of popular movies.
+
+---
+
+## Features
+
+1. **Homepage**
+
+   - Display a grid of movies from TMDb API's "Popular Movies" endpoint.
+   - Search movies by title.
+   - Infinite scrolling for seamless loading of more movies.
+
+2. **Movie Details Page**
+
+   - Detailed view of selected movie including title, poster, overview, genres, and cast.
+
+3. **Favorites**
+
+   - Add/remove movies from a "Favorites" list.
+   - Persist favorites using localStorage.
+   - Manage favorite movies on a dedicated page.
+
+4. **Responsive Design**
+
+   - Optimized for mobile, tablet, and desktop using Tailwind CSS.
+
+5. **Strong Typing**
+
+   - Built with TypeScript for type safety.
+
+6. **Bonus Features**
+   - Skeleton loaders for a better user experience.
+   - Deployed on Vercel for live demo.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### **Prerequisites**
 
-```bash
+Ensure you have the following installed:
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### **Installation**
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/movie-library-app.git
+   cd movie-library-app
+   ```
+   Here’s how you can structure the README.md file for your project:
+   README.md
+
+# Movie Library Application
+
+A responsive, dynamic Movie Library Application built using **Next.js**, **TypeScript**, and **Tailwind CSS**. The application interacts with the TMDb API to display and manage a list of popular movies.
+
+---
+
+## Features
+
+1. **Homepage**
+
+   - Display a grid of movies from TMDb API's "Popular Movies" endpoint.
+   - Search movies by title.
+   - Infinite scrolling for seamless loading of more movies.
+
+2. **Movie Details Page**
+
+   - Detailed view of selected movie including title, poster, overview, genres, and cast.
+
+3. **Favorites**
+
+   - Add/remove movies from a "Favorites" list.
+   - Persist favorites using localStorage.
+   - Manage favorite movies on a dedicated page.
+
+4. **Responsive Design**
+
+   - Optimized for mobile, tablet, and desktop using Tailwind CSS.
+
+5. **Strong Typing**
+
+   - Built with TypeScript for type safety.
+
+6. **Bonus Features**
+   - Skeleton loaders for a better user experience.
+   - Deployed on Vercel for live demo.
+
+---
+
+### **Prerequisites**
+
+Ensure you have the following installed:
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### **Installation**
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/ndynoahs/ikvmovies.git
+   cd movie-library-app
+
+   ```
+
+2. Install dependencies:
+
+npm install
+
+3. Create a .env.local file in the root of the project and add your TMDb API key:
+
+NEXT_PUBLIC_MOVIEDB_API_KEY=your_tmdb_api_key
+
+4. Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open the application in your browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **Deployment**
 
-## Learn More
+The application is deployed using Vercel. You can view the live demo here.
 
-To learn more about Next.js, take a look at the following resources:
+To deploy:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Push your code to GitHub.
+    Connect your repository to Vercel.
+    Follow the Vercel deployment steps.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+0000
 
-## Deploy on Vercel
+### **Design Choices**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Framework
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   Used Next.js for its powerful routing and data-fetching capabilities (SSR/SSG).
+
+2. Styling
+
+   Tailwind CSS was chosen for its utility-first approach and speed in developing responsive designs.
+
+3. API Integration
+
+   Integrated TMDb API to fetch and display movie data dynamically.
+
+4. State Management
+
+   Managed application state with React hooks (useState, useEffect) for simplicity.
+
+5. Infinite Scrolling
+
+   Improved user experience with seamless content loading using Intersection Observer API.
+
+6. TypeScript
+
+   Ensured strong type safety by defining interfaces for API responses and components.
+
+7. Favorites Persistence
+
+   Used localStorage to persist favorite movies, offering users a consistent experience.
+
+## Project Structure
+
+root/
+├── app/ # Next.js 14 App Directory
+│ ├── page.tsx # The home page (e.g., Movie grid, search functionality)
+│ ├── movie/ # Movie details page (Dynamic route for each movie)
+│ │ ├── [id]/ # Dynamic segment for individual movie page
+│ │
+│ ├── favorite-movies/ # Favorite movies page
+│ │ ├── page.tsx # Displays the list of favorite movies
+| ├── globals.css # Global CSS file, includes Tailwind setup
+│ └── layout.tsx # Global layout wrapper (used across pages)
+├── components/ # Reusable UI components like Header, MovieCard, etc.
+│ ├── Header.tsx # Navigation bar and buttons for adding/removing favorites
+│ ├── MovieCard.tsx # Displays a movie card with title, poster, and rating
+│ └── Skeleton.tsx # Skeleton loader component for fetching states
+├── hooks/ # Utility functions, API calls, etc.
+│ ├── useInfiniteScroll.tsx
+├── public/ # Static files (images, icons, etc.)
+
+## Future Improvements
+
+    Add user authentication to save favorites to a database.
+    Optimize performance with caching strategies.
+    Enhance accessibility features.
+
+License
+
+This project is licensed under the MIT License.
