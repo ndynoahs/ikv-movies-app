@@ -50,7 +50,7 @@ export default function MoviePage() {
 
       // Check if the movie is in favorites
       const favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies") || "[]");
-      const movieInFavorites = favoriteMovies.some((movie: MovieDetails) => movie.id === parseInt(id));
+      const movieInFavorites = favoriteMovies.some((movie: MovieDetails) => movie.id === parseInt(String(id)));
       setIsFavorite(movieInFavorites);
     };
 
@@ -62,7 +62,7 @@ export default function MoviePage() {
 
     if (isFavorite) {
       // Remove movie from favorites
-      const updatedFavorites = favoriteMovies.filter((movie: MovieDetails) => movie.id !== parseInt(id));
+      const updatedFavorites = favoriteMovies.filter((movie: MovieDetails) => movie.id !== parseInt(String(id)));
       localStorage.setItem("favoriteMovies", JSON.stringify(updatedFavorites));
       setIsFavorite(false);
     } else {
