@@ -23,9 +23,15 @@ interface CastResponse {
   cast: CastMember[];
 }
 
+interface MoviePageProps {
+  params: {
+    id: string;
+  };
+}
 
-export default function MoviePage({ params }: { params: { id: string } }) {
-    const { id } = params; 
+
+export default function MoviePage({ params }: MoviePageProps) {
+      const { id } = params; 
   // Movie state
   const [movie, setMovie] = useState<MovieDetails | null>(null);
   const [cast, setCast] = useState<CastMember[]>([]);
