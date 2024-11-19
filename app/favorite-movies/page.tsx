@@ -36,7 +36,7 @@ export default function FavoriteMovies() {
         </Link>      
       </div>      
       <div className="flex  flex-col justify-center items-center ">
-        <div className="w-[90%] pt-10">
+        <div className="md:w-[90%] pt-10">
 
           <h1 className="text-3xl font-bold mb-4">Favorite Movies</h1>
           {favoriteMovies.length === 0 ? (
